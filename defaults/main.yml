@@ -36,6 +36,13 @@ borgbackup_remote_ratelimit: 0
 # borgbackup_bb_quota: 1000 # in GB
 borgbackup_bb_region: eu
 
+borgbackup_prune: false
+borgbackup_prune_opts: "--list"
+borgbackup_keep_daily: 7
+borgbackup_keep_weekly: 4
+borgbackup_keep_monthly: 6
+borgbackup_keep_yearly: 3
+
 # borgbackup_repository_server: borg-srv-ubuntu
 # borgbackup_known_hosts:
 #   - "dummy ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIElvcKplWycItag/MP7gYUCy95WIhMM1OFKbZ/j/ykFE"

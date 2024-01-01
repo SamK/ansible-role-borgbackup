@@ -64,6 +64,7 @@
     - borgbackup-tasks.service
     - borgbackup.service
     - borgbackup.timer
+    - borgbackup-prune.service
   notify: Reload systemd
 
 - name: Flush handlers to reload systemd

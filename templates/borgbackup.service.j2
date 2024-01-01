@@ -2,6 +2,10 @@
 Description=Backup using 'borgbackup'
 After=borgbackup-tasks.service
 Wants=borgbackup-tasks.service
+{% if borgbackup_prune %}
+Before=borgbackup-prune.service
+Wants=borgbackup-prune.service
+{% endif %}
 {% if borgbackup_systemd_onfailure_unit is defined %}
 OnFailure={{ borgbackup_systemd_onfailure_unit }}
 {% endif %}
