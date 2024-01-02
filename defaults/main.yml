@@ -25,6 +25,7 @@ borgbackup_directories: ["{{ borgbackup_home }}/data"]
 borgbackup_exclude_patterns: []
 borgbackup_append_only: yes
 borgbackup_remote_ratelimit: 0
+borgbackup_create_opts: null
 # system unit to execute on failure
 # borgbackup_systemd_onfailure_unit: status-email-user@%n.service
 
