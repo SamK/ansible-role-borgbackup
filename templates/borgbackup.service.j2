@@ -17,6 +17,9 @@ ExecStart={{ borgbackup_executable }}{% if borgbackup_remote_ratelimit %} --remo
 {% if borgbackup_exclude_caches %}
   --exclude-caches \
 {% endif %}
+{% if borgbackup_create_opts %}
+  {{ borgbackup_create_opts }} \
+{% endif %}
   --patterns-from {{ borgbackup_home }}/config/patterns \
   --exclude-from {{ borgbackup_home }}/config/excludes \
   ::{now}
