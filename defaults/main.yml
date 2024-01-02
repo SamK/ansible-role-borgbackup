@@ -21,6 +21,7 @@ borgbackup_ssh_package:
 borgbackup_executable: /usr/{% if borgbackup_install_method == "upstream" %}local/{% endif %}bin/borg
 
 borgbackup_calendar_spec: "*-*-* 2:00:00"
+borgbackup_compact_calendar_spec: "*-*-* 7:00:00"
 borgbackup_directories: ["{{ borgbackup_home }}/data"]
 borgbackup_exclude_patterns: []
 borgbackup_append_only: yes

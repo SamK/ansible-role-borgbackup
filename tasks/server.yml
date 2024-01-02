@@ -23,3 +23,22 @@
   loop_control:
     label: "{{ item.split(' ', 2)[-1] }}"
   when: borgbackup_management_keys is defined
+
+- name: Install borg compact service file
+  template:
+    src: "{{ item }}.j2"
+    dest: /etc/systemd/system/{{ item }}
+    mode: "0644"
+  loop:
+    - borgbackup-compact.service
+    - borgbackup-compact.timer
+  notify: Reload systemd
+
+- name: Flush handlers to reload systemd
+  meta: flush_handlers
+
+- name: Enable systemd timer service
+  systemd:
+    name: borgbackup-compact.timer
+    enabled: yes
+    state: started

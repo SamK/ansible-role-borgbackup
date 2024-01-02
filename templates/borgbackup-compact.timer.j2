@@ -1,0 +1,9 @@
+[Unit]
+Description=Borgbackup timer
+
+[Timer]
+OnCalendar={{ borgbackup_compact_calendar_spec }}
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target
