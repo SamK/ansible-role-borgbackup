@@ -55,6 +55,10 @@ borgbackup_hostkey_checking: "ask"
 
 borgbackup_use_cap_dac_read_search: no
 
+borgbackup_compact_timer_state: started
+borgbackup_compact_timer_enabled: true
+borgbackup_compact_calendar_spec: "*-*-* 7:00:00"
+
 # configure borgbackup to send keep alives over ssh
 # see https://docs.borgbase.com/faq/#my-ssh-connection-breaks-after-a-long-backup-or-prune-operation for details
 borgbackup_ssh_server_alive_interval: 10

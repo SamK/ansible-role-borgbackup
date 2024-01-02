@@ -1,0 +1,7 @@
+[Unit]
+Description=Compact Borg repos
+
+[Service]
+User={{ borgbackup_user }}
+ExecStart=/bin/sh -c 'for f in {{ borgbackup_repository_storage }}/*; do borg compact $f; done'
+Type=oneshot
